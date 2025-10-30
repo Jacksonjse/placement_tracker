@@ -3,7 +3,7 @@ import axios from 'axios';
 // Create an instance of axios
 const api = axios.create({
   // Backend is running on port 5000 (from .env)
-  baseURL: 'http://localhost:5000/api', 
+  baseURL: 'https://placement-tracker-back.onrender.com', 
   headers: {
     'Content-Type': 'application/json',
   },
