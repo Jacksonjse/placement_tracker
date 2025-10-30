@@ -9,7 +9,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchStudents = async () => {
-      const res = await axios.get('http://localhost:5000/api/students', {
+      const res = await axios.get('https://placement-tracker-back.onrender.com', {
         headers: { Authorization: `Bearer ${getToken()}` },
       });
       setStudents(res.data);
@@ -19,7 +19,7 @@ const Dashboard = () => {
 
   const handleDelete = async (id) => {
     if (user.role === 'admin') {
-      await axios.delete(`http://localhost:5000/api/students/${id}`, {
+      await axios.delete(`https://placement-tracker-back.onrender.com/${id}`, {
         headers: { Authorization: `Bearer ${getToken()}` },
       });
       setStudents(students.filter((s) => s._id !== id));
